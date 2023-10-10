@@ -1,22 +1,22 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { buyMilk } from "../redux/milk/milkActions";
+import { buyCake } from "../redux-toolkit/cake/cakeSlice";
 
-function MilkContainer() {
+function CakeContainerReduxToolkit() {
   const [value, setValue] = useState(0);
   const state = useSelector(state => state);
   const dispatch = useDispatch();
   return (
     <div>
-      <h2>Number of Milks : {state.milk.numOfMilks}</h2>
+      <h2>Number of Cakes : {state.cake.numOfCakes}</h2>
       <input
         type="number"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={()=>dispatch(buyMilk(value))}>Buy Milk</button>
+      <button onClick={()=>dispatch(buyCake(value))}>Buy Cake</button>
     </div>
   );
 }
 
-export default MilkContainer;
+export default CakeContainerReduxToolkit;

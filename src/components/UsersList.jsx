@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 function UsersList() {
   const state = useSelector((state) => state.users);
-  console.log(state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUsers());
